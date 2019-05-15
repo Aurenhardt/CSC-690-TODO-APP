@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JfI-e6-iS6">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--TODO LIST-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController id="BYZ-38-t0r" customClass="TasksMainViewController" customModule="TODO_App_CSC690" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="in6-FL-cEU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="in6-FL-cEU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Syv-CD-Yej"/>
+                            <constraint firstItem="in6-FL-cEU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fmM-3Y-fYE"/>
+                            <constraint firstItem="in6-FL-cEU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rXQ-FU-Okc"/>
+                            <constraint firstItem="in6-FL-cEU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="tDI-4X-LQm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="TODO LIST" id="NEG-8L-2jw">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="hfg-yr-giu">
+                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="uMs-mK-R0Z" kind="presentation" identifier="AddSegue" id="uHQ-T3-u9W"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="in6-FL-cEU" id="JNy-5F-NUh"/>
+                        <segue destination="LJm-Ns-CD5" kind="presentation" identifier="EditSegue" id="wK8-W5-CTh"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1076" y="132.68365817091455"/>
+        </scene>
+        <!--Edit Task View Controller-->
+        <scene sceneID="nbU-BC-tEA">
+            <objects>
+                <viewController id="LJm-Ns-CD5" customClass="EditTaskViewController" customModule="TODO_App_CSC690" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S2W-VT-SBU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.55000000000000004" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zQE-Tq-GW5">
+                                <rect key="frame" x="16" y="192" width="343" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="VQW-o1-xbQ"/>
+                                </constraints>
+                                <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="258" translatesAutoresizingMaskIntoConstraints="NO" id="fWj-b2-mTO">
+                                <rect key="frame" x="16" y="614" width="343" height="37"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oZ-px-cG0">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="37"/>
+                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="21"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelEditingButtonTapped:" destination="LJm-Ns-CD5" eventType="touchUpInside" id="udb-tM-Ku7"/>
+                                            <action selector="doneEditingButtonTapped:" destination="LJm-Ns-CD5" eventType="touchUpInside" id="1h6-o0-MFQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbf-Cd-n9w">
+                                        <rect key="frame" x="302" y="0.0" width="41" height="37"/>
+                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
+                                        <state key="normal" title="Done"/>
+                                        <connections>
+                                            <action selector="doneEditingButtonTapped:" destination="LJm-Ns-CD5" eventType="touchUpInside" id="Fnt-kQ-ehq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLP-Mg-gSZ">
+                                <rect key="frame" x="16" y="36" width="150" height="44"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="32"/>
+                                <state key="normal" title="Mark Complete">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="markedCompleteButtonTapped:" destination="LJm-Ns-CD5" eventType="touchUpInside" id="Ajf-V5-qX0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3t-p8-D9P">
+                                <rect key="frame" x="297" y="36" width="62" height="44"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="32"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteTaskButtonTapped:" destination="LJm-Ns-CD5" eventType="touchUpInside" id="ZX1-xD-A0n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xLP-Mg-gSZ" firstAttribute="leading" secondItem="nmG-PQ-Rh5" secondAttribute="leading" constant="16" id="3il-f4-Xd4"/>
+                            <constraint firstItem="nmG-PQ-Rh5" firstAttribute="trailing" secondItem="zQE-Tq-GW5" secondAttribute="trailing" constant="16" id="6X6-0B-HTN"/>
+                            <constraint firstItem="nmG-PQ-Rh5" firstAttribute="bottom" secondItem="fWj-b2-mTO" secondAttribute="bottom" constant="16" id="GpH-mK-HyS"/>
+                            <constraint firstItem="xLP-Mg-gSZ" firstAttribute="top" secondItem="nmG-PQ-Rh5" secondAttribute="top" constant="16" id="RLM-wP-xsO"/>
+                            <constraint firstItem="nmG-PQ-Rh5" firstAttribute="trailing" secondItem="a3t-p8-D9P" secondAttribute="trailing" constant="16" id="Uwt-rC-QoF"/>
+                            <constraint firstItem="nmG-PQ-Rh5" firstAttribute="trailing" secondItem="fWj-b2-mTO" secondAttribute="trailing" constant="16" id="Z8e-NW-l1q"/>
+                            <constraint firstItem="zQE-Tq-GW5" firstAttribute="top" secondItem="S2W-VT-SBU" secondAttribute="top" constant="192" id="hjv-yI-mP0"/>
+                            <constraint firstItem="a3t-p8-D9P" firstAttribute="top" secondItem="nmG-PQ-Rh5" secondAttribute="top" constant="16" id="p34-XU-Qa5"/>
+                            <constraint firstItem="zQE-Tq-GW5" firstAttribute="leading" secondItem="nmG-PQ-Rh5" secondAttribute="leading" constant="16" id="uCw-Sf-KUo"/>
+                            <constraint firstItem="fWj-b2-mTO" firstAttribute="leading" secondItem="nmG-PQ-Rh5" secondAttribute="leading" constant="16" id="vOW-MS-C2c"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nmG-PQ-Rh5"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomConstraint" destination="GpH-mK-HyS" id="Y7J-KX-SbS"/>
+                        <outlet property="cancelEditingButton" destination="8oZ-px-cG0" id="WCx-MY-KBc"/>
+                        <outlet property="deleteTaskButton" destination="a3t-p8-D9P" id="ARl-R0-dfd"/>
+                        <outlet property="doneEditingButton" destination="jbf-Cd-n9w" id="EFP-Xv-MIT"/>
+                        <outlet property="markedCompleteButton" destination="xLP-Mg-gSZ" id="35z-t6-jUQ"/>
+                        <outlet property="userInputText" destination="zQE-Tq-GW5" id="c04-Dj-jSl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="og0-lb-lLB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="900.89955022488766"/>
+        </scene>
+        <!--Add Task View Controller-->
+        <scene sceneID="lNW-nV-vcS">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tgr-jk-hTw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="uMs-mK-R0Z" customClass="AddTaskViewController" customModule="TODO_App_CSC690" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IP8-gY-TLu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="228" translatesAutoresizingMaskIntoConstraints="NO" id="6bt-XH-VzI">
+                                <rect key="frame" x="14" y="607" width="345" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kv4-Sd-XGl">
+                                        <rect key="frame" x="0.0" y="0.0" width="67" height="44"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="32"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.corner.radius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="cancelButtonTapped:" destination="uMs-mK-R0Z" eventType="touchUpInside" id="FGe-fs-Ogr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezg-1S-iGK">
+                                        <rect key="frame" x="295" y="0.0" width="50" height="44"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="32"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.corner.path">
+                                                <integer key="value" value="9"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="cancelButtonTapped:" destination="uMs-mK-R0Z" eventType="touchUpInside" id="hPx-I9-nAD"/>
+                                            <action selector="doneButtonTapped:" destination="uMs-mK-R0Z" eventType="touchUpInside" id="KYN-yE-arC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="1"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.corner.path">
+                                        <integer key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="245" text="Type what you want to do..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="q5U-Q3-GfU">
+                                <rect key="frame" x="16" y="86" width="343" height="176"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="176" id="63H-r8-43o"/>
+                                </constraints>
+                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What will we be doing today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnX-gq-a3p">
+                                <rect key="frame" x="16" y="36" width="343" height="32"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="z9J-Lp-c02" firstAttribute="trailing" secondItem="vnX-gq-a3p" secondAttribute="trailing" constant="16" id="0Zd-mR-ezH"/>
+                            <constraint firstItem="6bt-XH-VzI" firstAttribute="leading" secondItem="z9J-Lp-c02" secondAttribute="leading" constant="14" id="4mG-9c-LZX"/>
+                            <constraint firstItem="z9J-Lp-c02" firstAttribute="bottom" secondItem="6bt-XH-VzI" secondAttribute="bottom" constant="16" id="Ae3-qs-6ic"/>
+                            <constraint firstItem="vnX-gq-a3p" firstAttribute="top" secondItem="z9J-Lp-c02" secondAttribute="top" constant="16" id="KfB-6W-Wn8"/>
+                            <constraint firstItem="z9J-Lp-c02" firstAttribute="trailing" secondItem="q5U-Q3-GfU" secondAttribute="trailing" constant="16" id="djb-AK-HzL"/>
+                            <constraint firstItem="q5U-Q3-GfU" firstAttribute="leading" secondItem="z9J-Lp-c02" secondAttribute="leading" constant="16" id="eFD-Vy-yYr"/>
+                            <constraint firstItem="vnX-gq-a3p" firstAttribute="leading" secondItem="z9J-Lp-c02" secondAttribute="leading" constant="16" id="mBq-tJ-McM"/>
+                            <constraint firstItem="q5U-Q3-GfU" firstAttribute="top" secondItem="vnX-gq-a3p" secondAttribute="bottom" constant="18" id="uGb-2i-tA6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="z9J-Lp-c02"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomConstraint" destination="Ae3-qs-6ic" id="FVa-dg-jbP"/>
+                        <outlet property="cancelButton" destination="kv4-Sd-XGl" id="rXf-rc-Rgc"/>
+                        <outlet property="doneButton" destination="Ezg-1S-iGK" id="ETl-fl-f0F"/>
+                        <outlet property="userInputText" destination="q5U-Q3-GfU" id="6ZS-mL-H2d"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1861.5999999999999" y="132.68365817091455"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="i1S-PP-MZL">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jKu-jl-dKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JfI-e6-iS6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="2WN-TY-82P">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.78975064770000003" green="0.1168641055" blue="0.54408302200000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
+                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="40"/>
+                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tNG-e7-n8m"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="292" y="133"/>
+        </scene>
+    </scenes>
+</document>
